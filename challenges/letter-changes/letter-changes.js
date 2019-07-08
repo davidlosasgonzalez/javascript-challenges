@@ -2,19 +2,23 @@ function LetterChanges(str) {
     
     const result = str.split("");
     
-    const patron = /[A-Za-z]/;
+    const patron_a = /[A-Za-z]/;
+    const patron_b = /[aeiou]/;
 
-    result.forEach(function(val,index,array ) {
+    result.forEach(function(val,i,arr) {
      
      if (val === " ") {
-        array[index] = " ";
+        arr[i] = " ";
      }
      
-     else if (patron.test(val)) {
-        array[index] = String.fromCharCode(val.charCodeAt(val.length-1)+1);
-        if (array[index] === "a" || array[index] === "e" || array[index] === "i" || array[index] === "o" || array[index] === "u") {
-            array[index] = array[index].toUpperCase();
-        } 
+     else if (patron_a.test(val)) {
+       
+        arr[i] = String.fromCharCode(val.charCodeAt(val.length-1)+1);
+        
+        if (arr[i].match(patron_b)) {
+          arr[i] = arr[i].toUpperCase();
+        }
+        
      }
      
     }); 
