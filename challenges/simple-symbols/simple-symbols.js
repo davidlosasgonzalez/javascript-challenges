@@ -22,10 +22,6 @@ function SimpleSymbols(str) {
     console.log(false);
   }
   
-  else if (str.length < 3) {
-    console.log(false);
-  }
-  
   else {
     
     if (str.match(/[A-Za-z]/g)) {
