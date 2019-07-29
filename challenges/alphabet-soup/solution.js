@@ -5,5 +5,5 @@ function AlphabetSoup(str) {
     console.log(a.split('').sort().join(''));
          
 }
-   g
+   
 AlphabetSoup("Wonderful");
